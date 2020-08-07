@@ -2,11 +2,23 @@
 ###
 ### netboot.xyz-custom menu
 ###
+dhcp
 
-:start
-echo Hello world!
-sleep 10
-goto custom_exit
+set secsWdsSrv 141.210.26.119
 
-:custom_exit
-exit 0
+set menu-timeout 10000
+
+menu Network Boot Menu for Oakland University
+
+item --gap --             -------------------------------------------------------
+item --key l localBoot Boot normally to this computer. 
+item --key s secsWds SECS Windows deployment services. (s)
+choose --timeout ${menu-timeout} --default localBoot selected
+goto ${selected}
+
+:secsWds
+set netX/next-server ${secsWdsSrv}
+chain tftp://${secsWdsSrv}/boot\\x64\\wdsmgfw.efi
+
+:localBoot
+exit
