@@ -4,7 +4,6 @@
 ###
 
 ### AJCARRILLO NOTE: FOR UEFI USB
-dhcp
 
 set secsWdsSrv 141.210.26.119
 
