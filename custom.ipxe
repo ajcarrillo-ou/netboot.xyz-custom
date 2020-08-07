@@ -13,7 +13,7 @@ menu Network Boot Menu for Oakland University
 
 item --gap --             -------------------------------------------------------
 item --key l localBoot Boot normally to this computer. 
-item --key s secsWds SECS Windows deployment services. (s)
+item --key s secsWds UEFI Windows deployment services. (s)
 choose --timeout ${menu-timeout} --default localBoot selected
 goto ${selected}
 
