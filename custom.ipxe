@@ -7,7 +7,7 @@
 
 set secsWdsSrv 141.210.26.119
 
-set menu-timeout 3
+set menu-timeout 10000
 
 menu Network Boot Menu for Oakland University
 
