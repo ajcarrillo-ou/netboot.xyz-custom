@@ -23,7 +23,9 @@ set netX/next-server ${secsWdsSrv}
 chain tftp://${secsWdsSrv}/boot\\x64\\wdsmgfw.efi
 
 :testDHCP
-autoboot
+dhcp
+autoboot net0
 
 :viewDHCP
-config
+dhcp
+config net0
