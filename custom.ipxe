@@ -13,9 +13,14 @@ menu Network Boot Menu for Oakland University
 
 item --gap --             -------------------------------------------------------
 item --key s secsWds UEFI Windows deployment services. (s)
+item --key t testDHCP test dhcp (t)
 choose --timeout ${menu-timeout} --default secsWds selected
 goto ${selected}
 
 :secsWds
 set netX/next-server ${secsWdsSrv}
 chain tftp://${secsWdsSrv}/boot\\x64\\wdsmgfw.efi
+
+:testDHCP
+dhcp
+autoboot
